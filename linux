@@ -1,0 +1,56 @@
+ en este documentos vamos a ver los comandos de linux mas utilizados para aprender a trabajr con su respectiva definicion
+cat
+less
+head
+tail
+grep
+find
+chmod
+chown
+whoami
+id
+¿que es cat?
+cat es un comando usando en linux que se usa principalmente para poder leer archivos o documentos es fundamental.
+¿que es less?
+lees nos permite mover con la fechas del cursor y una manera mejor para poder leer archivos de textos nos permite mas interaccion 
+¿que es head?
+sirve para mostrar numero deliberado de lineas o contenido de un archivo 
+head -n1
+head -c1
+¿que es tail?
+sirve para leer las ultimas lineas de un archivo y monitorear archivos principalmente 
+tail -n 20 archivo.txt
+tail -f /var/log/syslog
+¿ que es grep?
+ este sirve para buscar contenido o un archivo ams rapido y de mejor manera en un directorio
+Parámetros más útiles
+-i: Ignora si el texto está en mayúsculas o minúsculas (ej. grep -i error sistema.log)
+.-n: Muestra el número de línea donde se encontró la coincidencia.
+-v: Invierte la búsqueda, mostrando únicamente las líneas que no contienen el patrón buscado.-c: Cuenta cuántas veces aparece la palabra.
+¿ que es find? 
+ find es una herramienta y comando escencial en linux porque nos ayuda a buscar archivos y directorios de forma precisa por su nombre 
+  ¿ que es chmod?
+se usa para dar acceso a archivos 
+Los permisos se dividen en tres tipos de usuarios:u (User): El propietario del archivo
+.g (Group): Los usuarios que pertenecen al grupo propietario
+.o (Others): El resto de usuarios.Y las acciones permitidas son
+:r (Lectura - Read): Ver el contenido de un archivo o listar directorios
+.w (Escritura - Write): Modificar o borrar archivos
+.x (Ejecución - Execute): Ejecutar scripts o entrar a un directorio.Existen dos formas de usarlo:1. 
+Modo Octal (Numérico)Se usan tres números (del 0 al 7) que representan los permisos de usuario, grupo y otros respectivamente.
+Los valores son: Lectura = 4, Escritura = 2, Ejecución = 1
+.chmod 777 archivo.txt: Da todos los permisos a todos (peligroso para seguridad)
+.chmod 755 carpeta: El dueño tiene todos los permisos; el grupo y otros solo pueden leer y entrar
+.2. Modo SimbólicoUtilizas letras para añadir (+) o quitar (-) permisos:chmod +x script.sh: Otorga permiso de ejecución a todos.chmod u+w archivo.txt: Añade permiso de escritura solo al usuario propietario.
+¿ para que sirve chown?
+sirve para cambiar el propietario de archivos 
+La estructura general del comando es:chown [nuevo_propietario]:[nuevo_grupo] [archivo o directorio]
+Cambiar solo el propietario:sudo chown usuario archivo.txt(Asigna el archivo exclusivamente al usuario "usuario").
+Cambiar solo el grupo:sudo chown :grupo archivo.txt(Solo modifica el grupo, manteniendo el propietario actual)
+.Cambiar ambos a la vez:sudo chown usuario:grupo archivo.txt(Modifica simultáneamente el propietario y el grupo).
+Aplicar cambios de forma masiva:sudo chown -R usuario:grupo /ruta/carpeta(La opción -R hace el cambio recursivo, afectando a la carpeta y a todos los archivos y subcarpetas que contiene)
+siempre se debe usar como administrador usando el comando sudo
+¿para que sirve whoami?
+whoami sirve para ver el usario quien es.
+id 
+ sirve para ver tus credenciales 
